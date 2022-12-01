@@ -2,33 +2,14 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Stocks from './components/Stocks';
 import Movies from './components/Movies';
-import { Link, NavLink} from 'react-router-dom'
+import Navbar from './components/Navbar';
 import './index.css'
 
 function App() {
   return (
     <div className='main'>
       <h1>App Component</h1>
-      <nav className="comp nav">
-        <ul>
-          <li>
-        <NavLink 
-        activeStyle={{ fontWeight: 'bold' }}
-        activeClassName='purple' 
-        exact to="/" >home</NavLink>
-          </li>
-          <li>
-        <NavLink 
-        activeStyle={{ fontWeight: 'bold' }}
-        activeClassName='purple' exact to="/stocks">stocks</NavLink>
-        </li>
-        <li>
-        <NavLink 
-        activeStyle={{ fontWeight: 'bold' }}
-        activeClassName='purple' exact to="/movies">movies</NavLink>
-        </li>
-        </ul>
-      </nav>
+      <Navbar />
       <Switch>
         <Route exact path='/'>
           <Home />
